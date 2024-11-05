@@ -26,11 +26,11 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        User::create($request->validated());
-
-        return redirect()
+        User::create($request->all());
+            return redirect()
             ->route('users.index')
-            ->with('success', 'Usuário criado com sucesso');
+            ->with('success', 'Usuario cadastrado com sucesso');
+            
     }
 
     public function edit(string $id)
